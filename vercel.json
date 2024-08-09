@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/pepe-generator/main.py",
+      "src": "src/pepe_generator/main.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/pepe-generator/main.py"
+      "dest": "src/pepe_generator/main.py"
     }
   ]
 }
