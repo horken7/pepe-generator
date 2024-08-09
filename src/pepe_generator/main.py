@@ -29,7 +29,7 @@ default_image_response = requests.get(
 async def return_pepe():
     if os.environ.get("KAGGLE_ENABLE"):
         return Response(default_image_response.content, media_type="image/jpeg")
-    random_image = random.choice(os.listdir("data"))
+    random_image = random.choice([f for f in os.listdir("data") if not f.endswith('.txt')])
     image_path = os.path.join("data", random_image)
     return FileResponse(image_path)
 
