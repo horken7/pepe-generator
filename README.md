@@ -1,6 +1,6 @@
 Pepe Generator
 ==============
-![example workflow](https://github.com/horken7/pepe-generator/actions/workflows/main.yml/badge.svg) ![Vercel Deploy](https://deploy-badge.vercel.app/vercel/pepe-generator-ruddy)
+![example workflow](https://github.com/horken7/pepe-generator/actions/workflows/main.yml/badge.svg)
 
 This is an example project for a Python package with FastAPI web application.
 
@@ -46,9 +46,6 @@ tox
 
 # Continuous Integration
 This project uses GitHub Actions for Continuous Integration (CI). The CI pipeline is defined in the [.github/workflows/main.yml](.github/workflows/main.yml) file and is triggered on every push or pull request to the main branch. The pipeline runs tox to execute the tests and linting checks.
-
-# Deploy
-The app is automatically deployed to Vercel. Each push to master is deployed to production on https://pepe-generator-ruddy.vercel.app/. Each push to a branch is deployed to a feature environment.  
 
 # Contributing
 Contributions are welcome! Please follow these steps:
