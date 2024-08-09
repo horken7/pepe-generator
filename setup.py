@@ -14,7 +14,7 @@ extra_requirements = {
 }
 
 setup(
-    name="foo_bar_banana",
+    name="pepe_generator",
     version="0.1",
     packages=find_packages(where='src'),
     package_dir={"": "src"},
@@ -22,7 +22,7 @@ setup(
     extras_require=extra_requirements,
     entry_points={
         'console_scripts': [
-            'run-foo-bar-banana=foo_bar_banana.main:main',
+            'run-pepe-generator=pepe_generator.main:main',
         ],
     },
 )

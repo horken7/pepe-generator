@@ -1,23 +1,36 @@
-Foo Bar Banana
+Pepe Generator
 ==============
-![example workflow](https://github.com/horken7/foo_bar_banana/actions/workflows/main.yml/badge.svg) ![Vercel Deploy](https://deploy-badge.vercel.app/vercel/foo-bar-banana)
+![example workflow](https://github.com/horken7/pepe-generator/actions/workflows/main.yml/badge.svg) ![Vercel Deploy](https://deploy-badge.vercel.app/vercel/pepe-generator-ruddy)
 
-This is an example project for a Python package with FastAPI web application. 
+This is an example project for a Python package with FastAPI web application.
+
+This package provides a FastAPI application that serves Pepe the Frog memes from a [Kaggle dataset](https://www.kaggle.com/datasets/tornikeonoprishvili/pepe-memes-dataaset) (if Kaggle auth is provided, otherwise a [default image](https://upload.wikimedia.org/wikipedia/en/6/63/Feels_good_man.jpg).)
 
 # Installation
 
-To install foo-bar-banana, you can use pip:
+To install Pepe Generator, you can use pip:
 
 ```bash
 pip install .
 ```
 
 # Usage
+The app is expecting the following environment variables authenticate to Kaggle to get the dataset:
+
+```
+export KAGGLE_ENABLE=True
+export KAGGLE_USERNAME=your_kaggle_username
+export KAGGLE_KEY=your_kaggle_key
+```
+
+You can generate a token by following the instructions [here](https://www.kaggle.com/docs/api#Authentication:~:text=is%20%24PYTHON_HOME/Scripts.-,Authentication,the%20download%20of%20kaggle.json%2C%20a%20file%20containing%20your%20API%20credentials.,-If%20you%20are).
+
+If you do not provide Kaggle authentication, a [default image](https://upload.wikimedia.org/wikipedia/en/6/63/Feels_good_man.jpg) will be used.
 
 The application is exposed as an entry point, after installing the package you can run it by:
 
 ```bash
-run-foo-bar-banana
+run-pepe-generator
 ```
 
 This will start the application on http://localhost:8000. You can access the Swagger UI documentation at http://localhost:8000/docs.
@@ -35,7 +48,7 @@ tox
 This project uses GitHub Actions for Continuous Integration (CI). The CI pipeline is defined in the [.github/workflows/main.yml](.github/workflows/main.yml) file and is triggered on every push or pull request to the main branch. The pipeline runs tox to execute the tests and linting checks.
 
 # Deploy
-The app is automatically deployed to Vercel. Each push to master is deployed to production on foo-bar-banana.vercel.app. Each push to a branch is deployed to a feature environment.  
+The app is automatically deployed to Vercel. Each push to master is deployed to production on https://pepe-generator-ruddy.vercel.app/. Each push to a branch is deployed to a feature environment.  
 
 # Contributing
 Contributions are welcome! Please follow these steps:
