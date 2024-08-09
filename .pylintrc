@@ -1,0 +1,8 @@
+[MASTER]
+ignore=tests
+
+[MESSAGES CONTROL]
+disable=
+    C0111,  # Missing docstring
+    R0903,  # Too few public methods
+    W1203,  # Use of magic method
