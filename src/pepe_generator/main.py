@@ -16,7 +16,7 @@ if (
     import kaggle
 
     kaggle.api.dataset_download_files(
-        "tornikeonoprishvili/pepe-memes-dataaset", unzip=True
+        "tornikeonoprishvili/pepe-memes-dataaset", unzip=True, path="data/pepe"
     )
 
 default_image_response = requests.get(
@@ -27,10 +27,10 @@ default_image_response = requests.get(
 
 @app.get("/")
 async def return_pepe():
-    if os.environ.get("KAGGLE_ENABLE"):
+    if not os.environ.get("KAGGLE_ENABLE"):
         return Response(default_image_response.content, media_type="image/jpeg")
-    random_image = random.choice([f for f in os.listdir("data") if not f.endswith('.txt')])
-    image_path = os.path.join("data", random_image)
+    random_image = random.choice([f for f in os.listdir("data/pepe/data") if not f.endswith('.txt')])
+    image_path = os.path.join("data/pepe/data", random_image)
     return FileResponse(image_path)
 
 
