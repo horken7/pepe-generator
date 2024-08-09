@@ -9,8 +9,7 @@ from fastapi.responses import FileResponse, Response
 app = FastAPI()
 
 if (
-    not os.path.exists("data")
-    and os.environ.get("KAGGLE_ENABLE")
+    os.environ.get("KAGGLE_ENABLE")
     and os.environ.get("KAGGLE_USERNAME")
     and os.environ.get("KAGGLE_KEY")
 ):
@@ -28,7 +27,7 @@ default_image_response = requests.get(
 
 @app.get("/")
 async def return_pepe():
-    if not os.path.exists("data"):
+    if os.environ.get("KAGGLE_ENABLE"):
         return Response(default_image_response.content, media_type="image/jpeg")
     random_image = random.choice(os.listdir("data"))
     image_path = os.path.join("data", random_image)
